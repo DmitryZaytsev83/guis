@@ -1,0 +1,23 @@
+{
+  "name": "internetshop",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.php",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "dmitry zaytsev",
+  "license": "ISC",
+  "dependencies": {},
+  "devDependencies": {
+    "@cedx/gulp-php-minify": "^9.0.0",
+    "del": "^3.0.0",
+    "gulp": "^4.0.0",
+    "gulp-autoprefixer": "^6.0.0",
+    "gulp-clean-css": "^4.0.0",
+    "gulp-concat": "^2.6.1",
+    "gulp-sass": "^4.0.2",
+    "gulp-terser": "^1.1.5",
+    "node-sass": "^4.10.0"
+  }
+}
