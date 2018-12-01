@@ -28,6 +28,11 @@ function php() {
         .pipe(dest("dist/"));
 }
 
+function images() {
+    return src("images/**/*.+(png|svg)")
+        .pipe(dest("dist/images/"));
+}
+
 
 exports.html = html;
-exports.default = series(clean, parallel(php, html, css));
+exports.default = series(clean, parallel(php, html, css, images));
