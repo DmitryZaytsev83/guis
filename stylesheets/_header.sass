@@ -1,14 +1,21 @@
 .wrapper
   width: 100%
-  height: 100px
+  height: 140px
   display: flex
   flex-direction: row
   justify-content: center
+  align-items: center
 
 .container
   width: 1140px
+  margin: 2rem
+  display: flex
+  flex-direction: row
+  justify-content: center
+  align-items: center
 
 .header
+  width: 100%
   display: flex
   flex-direction: row
   justify-content: space-between
@@ -24,6 +31,7 @@
 
 .logo__text
   font-size: 2rem
+  font-weight: bold
   margin: 0
 
 .search
@@ -31,16 +39,42 @@
   justify-content: center
   align-items: center
 
-$searchElementHeight: 2rem
+$searchElementHeight: 2.5rem
 
 .search__browse
   height: $searchElementHeight
+  padding: $buttonPadding
+  color: $normalTextColor
 
 .search__input
   width: 25rem
   height: ($searchElementHeight - 0.4rem)
   padding: 1px 1rem
+  outline-color: $normalTextColor
 
 
 .search__find
   height: $searchElementHeight
+  padding: $buttonPadding
+  color: $normalTextColor
+
+.cart
+  display: flex
+  flex-direction: row
+  justify-content: space-around
+  align-items: center
+
+.cart__image
+  height: $searchElementHeight
+
+.account
+  margin: 0 1rem
+
+.header__account
+  height: 100%
+  padding: 0 1rem
+  color: white
+  background-color: $uglyPink
+  border: none
+  border-radius: 2px
+
