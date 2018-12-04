@@ -1,27 +1,11 @@
-.wrapper
-  width: 100%
-  height: 140px
-  display: flex
-  flex-direction: row
-  justify-content: center
-  align-items: center
-
-.container
-  width: 1140px
-  margin: 2rem
-  display: flex
-  flex-direction: row
-  justify-content: center
-  align-items: center
-
 .header
-  width: 100%
   display: flex
   flex-direction: row
   justify-content: space-between
 
 .container__header
-  margin: 1rem
+  width: 100%
+  height: 140px
 
 .logo
   display: flex
@@ -30,7 +14,7 @@
   align-items: center
 
 .logo__text
-  font-size: 2rem
+  font-size: 2.5rem
   font-weight: bold
   margin: 0
 
@@ -41,17 +25,31 @@
 
 $searchElementHeight: 2.5rem
 
+.browse
+  display: flex
+  flex-direction: row
+  justify-content: center
+  align-items: center
+
 .search__browse
   height: $searchElementHeight
   padding: $buttonPadding
   color: $normalTextColor
+
+.search__browse:after
+  content: ''
+  display: block
+  width: 0
+  border: 4px solid transparent
+  border-top: 4px solid $normalTextColor
+  position: relative
+  margin: 4px 0 0 4px
 
 .search__input
   width: 25rem
   height: ($searchElementHeight - 0.4rem)
   padding: 1px 1rem
   outline-color: $normalTextColor
-
 
 .search__find
   height: $searchElementHeight
@@ -65,16 +63,26 @@ $searchElementHeight: 2.5rem
   align-items: center
 
 .cart__image
-  height: $searchElementHeight
+  height: 2rem
+  padding: .25rem
 
 .account
   margin: 0 1rem
+  display: flex
+  justify-content: center
+  align-items: center
 
 .header__account
-  height: 100%
+  height: 2.5rem
   padding: 0 1rem
+  font-weight: bold
   color: white
   background-color: $uglyPink
-  border: none
+  border: 1px solid transparent
   border-radius: 2px
+  transition: $normalTransition
 
+.header__account:hover
+  color: $uglyPink
+  background-color: #fff
+  border: 1px solid $uglyPink
