@@ -37,25 +37,26 @@ class EndPage {
 }
 
 class MainPage {
-    private $head, $header, $nav, $footer, $end;
+    private $head, $header, $nav, $footer, $end, $promotion;
 
     function __construct() {
         $this->head = Head::printHead();
         $this->header = Header::printHeader();
         $this->nav = Nav::printNav();
+        $this->promotion = Promotion::printPromotion();
         $this->footer = Footer::printFooter();
         $this->end = EndPage::printEndPage();
     }
 
     private function makeMainWrapper($content) {
-        return "<main class='main'>" . $content . "</main>";
+        return "<main class='main border-bottom'>" . $content . "</main>";
     }
 
     public function render() {
         echo $this->head;
         echo $this->header;
         echo $this->nav;
-        echo $this->makeMainWrapper('');
+        echo $this->makeMainWrapper($this->promotion);
         echo $this->footer;
         echo $this->end;
     }
