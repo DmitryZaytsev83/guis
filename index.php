@@ -24,6 +24,12 @@ class Promotion {
     }
 }
 
+class HotDeals {
+    public static function printHotDeals() {
+        return file_get_contents("html/hotDeals.html");
+    }
+}
+
 class Footer {
     public static function printFooter() {
         return file_get_contents("html/footer.html");
@@ -37,13 +43,14 @@ class EndPage {
 }
 
 class MainPage {
-    private $head, $header, $nav, $footer, $end, $promotion;
+    private $head, $header, $nav, $footer, $end, $promotion, $hotDeals;
 
     function __construct() {
         $this->head = Head::printHead();
         $this->header = Header::printHeader();
         $this->nav = Nav::printNav();
         $this->promotion = Promotion::printPromotion();
+        $this->hotDeals = HotDeals::printHotDeals();
         $this->footer = Footer::printFooter();
         $this->end = EndPage::printEndPage();
     }
@@ -52,14 +59,24 @@ class MainPage {
         return "<main class='main border-bottom'>" . $content . "</main>";
     }
 
+    private function buildMain(...$args) {
+        $main = '';
+        foreach ($args as $block) {
+            $main .= $block;
+        }
+        return $main;
+    }
+
     public function render() {
         echo $this->head;
         echo $this->header;
         echo $this->nav;
-        echo $this->makeMainWrapper($this->promotion);
+        $main = $this->buildMain($this->promotion, $this->hotDeals);
+        echo $this->makeMainWrapper($main);
         echo $this->footer;
         echo $this->end;
     }
+
 }
 
 $page = new MainPage();
