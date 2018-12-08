@@ -33,6 +33,12 @@ function images() {
         .pipe(dest("dist/images/"));
 }
 
+function xampp() {
+    return src("dist/**/*.*")
+    .pipe(dest("C:/xampp/htdocs/internetShop/"));
+}
+
 
 exports.html = html;
 exports.default = series(clean, parallel(php, html, css, images));
+exports.devX = series(clean, parallel(php, html, css, images), xampp);
