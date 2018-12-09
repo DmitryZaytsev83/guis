@@ -1,0 +1,91 @@
+.subscribe
+  min-height: 25rem
+  background-image: url("../images/subscribe/background.png")
+  //background-position: center
+  background-size: cover
+
+.subscribe-row
+  display: flex
+  flex-direction: row
+  justify-content: center
+  align-items: center
+
+.subscribe-column
+  width: 50%
+
+.slider-feedback
+  display: flex
+  flex-direction: row
+
+.slider__image
+  margin: 1rem
+  border-radius: 50%
+
+.slider-feedback__right
+  display: flex
+  flex-direction: column
+  justify-content: space-around
+  align-items: flex-start
+  padding: 1rem
+
+.slider__anchors-list
+  display: flex
+  flex-direction: row
+  align-items: center
+  justify-content: center
+
+.slider__anchor
+  margin: 0.1rem
+  width: 40px
+  height: 5px
+  background-color: $normalTextColor
+  transition: $normalTransition
+
+.slider__anchor:hover
+  cursor: pointer
+  background-color: $uglyPink
+
+.subscribe-form
+  display: flex
+  flex-direction: column
+  justify-content: space-around
+  align-items: center
+
+.subscribe-header
+  text-transform: uppercase
+  font-size: 1.3rem
+
+.subscribe-text
+  text-transform: uppercase
+
+.input-group
+  display: flex
+  flex-direction: row
+  justify-content: center
+
+.email
+  width: 20rem
+  padding: 1rem
+  border-bottom-left-radius: 1.25rem
+  border-top-left-radius: 1.25rem
+  border: 1px solid transparent
+  background-color: #e1e1e1
+  opacity: 0.7
+  outline: none
+
+
+.subscribe-submit
+  width: 8rem
+  color: white
+  background-color: $uglyPink
+  transition: $normalTransition
+  border-top-right-radius: 1.25rem
+  border-bottom-right-radius: 1.25rem
+  outline: none
+  border: 1px solid transparent
+  
+.subscribe-submit:hover
+  color: $uglyPink
+  background-color: #fff
+  border: 1px solid $uglyPink
+  cursor: pointer

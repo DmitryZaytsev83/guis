@@ -30,6 +30,12 @@ class HotDeals {
     }
 }
 
+class Subscribe {
+    public static function printSubscribe() {
+        return file_get_contents("html/subscribe.html");
+    }
+}
+
 class Footer {
     public static function printFooter() {
         return file_get_contents("html/footer.html");
@@ -43,7 +49,14 @@ class EndPage {
 }
 
 class MainPage {
-    private $head, $header, $nav, $footer, $end, $promotion, $hotDeals;
+    private $head,
+        $header,
+        $nav,
+        $footer,
+        $end,
+        $promotion,
+        $hotDeals,
+        $subscribe;
 
     function __construct() {
         $this->head = Head::printHead();
@@ -51,6 +64,7 @@ class MainPage {
         $this->nav = Nav::printNav();
         $this->promotion = Promotion::printPromotion();
         $this->hotDeals = HotDeals::printHotDeals();
+        $this->subscribe = Subscribe::printSubscribe();
         $this->footer = Footer::printFooter();
         $this->end = EndPage::printEndPage();
     }
@@ -71,7 +85,11 @@ class MainPage {
         echo $this->head;
         echo $this->header;
         echo $this->nav;
-        $main = $this->buildMain($this->promotion, $this->hotDeals);
+        $main = $this->buildMain(
+            $this->promotion,
+            $this->hotDeals,
+            $this->subscribe
+        );
         echo $this->makeMainWrapper($main);
         echo $this->footer;
         echo $this->end;
