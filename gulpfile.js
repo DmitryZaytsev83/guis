@@ -8,7 +8,6 @@ sass.compiler = require('node-sass');
 
 function clean() {
     return del(["dist/*", "!dist"]);
-
 }
 
 function html() {
@@ -35,9 +34,8 @@ function images() {
 
 function xampp() {
     return src("dist/**/*.*")
-    .pipe(dest("C:/xampp/htdocs/internetShop/"));
+        .pipe(dest("C:/xampp/htdocs/internetShop/"));
 }
-
 
 exports.html = html;
 exports.default = series(clean, parallel(php, html, css, images));

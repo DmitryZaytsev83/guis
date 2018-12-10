@@ -48,7 +48,10 @@ $searchElementHeight: 2.5rem
   width: 25rem
   height: ($searchElementHeight - 0.4rem)
   padding: 1px 1rem
-  outline-color: $normalTextColor
+  outline: none
+
+.search__input:focus
+  outline: 1px solid $uglyPink
 
 .search__find
   height: $searchElementHeight
@@ -72,8 +75,8 @@ $searchElementHeight: 2.5rem
   align-items: center
 
 .header__account
-  height: 2.5rem
-  padding: 0 1rem
+  //height: 2.5rem
+  padding: 1rem
   font-weight: bold
   color: white
   background-color: $uglyPink
